@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=$1
+
+export PATH=$BUILD_DIR/.heroku/python/bin:$PATH
+
+ln -s $BUILD_DIR/.heroku /app/
+ls -al /app/.heroku
+
+echo "-----> Installing electrum"
+$BUILD_DIR/.heroku/python/bin/pip install https://electrum-ltc.org/download/Electrum-LTC-2.6.4.2.tar.gz
+
+#touch $1/.heroku/electrumed
+
+echo "-----> Wallet Not Configured!"
+
+
